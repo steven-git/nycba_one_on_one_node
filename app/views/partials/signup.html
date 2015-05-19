@@ -1,0 +1,186 @@
+<div ng-hide="confirmation" class="signup text-left">
+
+	<h3 class="text-center"><strong>Any questions, please contact league creator Steven at 347-479-4998 or email nycba.league@gmail.com</strong></h3>
+
+	<div class="col-md-12">
+		<div class="col-md-12">
+			<span class="label"><b>Checkout:</b></span>
+			<span class="label">Credit Card Information:</span>
+		</div>
+		<div class="col-md-6 margin-bottom">
+			<div class="row-form">
+				<div class="col-md-6 no-padding">
+					<span class="label">First Name:</span>
+					<input id="firstName" type="text" ng-model="user.firstName">
+				</div>
+				<div class="col-md-6 no-padding-small">
+					<span class="label">Last Name:</span>
+					<input id="lastName" type="text" ng-model="user.lastName">
+				</div>
+			</div>
+			<div class="row-form">
+				<span class="label">Billing address:</span>
+				<input id="addressOne" type="text" ng-model="user.addressOne">
+				<input id="addressTwo" type="text" ng-model="user.addressTwo">
+			</div>
+			<div class="row-form">
+				<div class="col-md-8 no-padding">
+					<span class="label">City:</span>
+					<input id="city" type="text" ng-model="user.city">
+				</div>
+				<div class="col-md-4 no-padding-small">
+					<span class="label">State:</span>
+					<select id="state" class="ng-pristine ng-valid" ng-model="user.state">
+						<option value="?" selected="selected"></option>
+						<option value="0">AL</option>
+						<option value="1">AK</option>
+						<option value="2">AZ</option>
+						<option value="3">AR</option>
+						<option value="4">CA</option>
+						<option value="5">CO</option>
+						<option value="6">CT</option>
+						<option value="7">DE</option>
+						<option value="8">FL</option>
+						<option value="9">GA</option>
+						<option value="10">HI</option>
+						<option value="11">ID</option>
+						<option value="12">IL</option>
+						<option value="13">IN</option>
+						<option value="14">IA</option>
+						<option value="15">KS</option>
+						<option value="16">KY</option>
+						<option value="17">LA</option>
+						<option value="18">ME</option>
+						<option value="19">MD</option>
+						<option value="20">MA</option>
+						<option value="21">MI</option>
+						<option value="22">MN</option>
+						<option value="23">MS</option>
+						<option value="24">MO</option>
+						<option value="25">MT</option>
+						<option value="26">NE</option>
+						<option value="27">NV</option>
+						<option value="28">NH</option>
+						<option value="29">NJ</option>
+						<option value="30">NM</option>
+						<option value="31">NY</option>
+						<option value="32">NC</option>
+						<option value="33">ND</option>
+						<option value="34">OH</option>
+						<option value="35">OK</option>
+						<option value="36">OR</option>
+						<option value="37">PA</option>
+						<option value="38">RI</option>
+						<option value="39">SC</option>
+						<option value="40">SD</option>
+						<option value="41">TN</option>
+						<option value="42">TX</option>
+						<option value="43">UT</option>
+						<option value="44">VT</option>
+						<option value="45">VA</option>
+						<option value="46">WA</option>
+						<option value="47">WV</option>
+						<option value="48">WI</option>
+						<option value="49">WY</option>
+						<option value="50">DC</option>
+					</select>
+					<br>
+				</div>
+			</div>
+			<div class="row-form">
+				<div class="col-md-4 no-padding">
+					<span class="label">Zip:</span>
+					<input id="zip" type="text" ng-model="user.zip">
+				</div>
+				<div class="col-md-8 no-padding-small">
+					<span class="label">Phone:</span>
+					<input id="phone" type="text" ng-model="user.phone">
+				</div>
+			</div>
+			<div class="row-form">
+				<span class="label">Email:</span>
+				<input id="email" type="text" ng-model="user.email">
+				<span class="text-muted"><small>your confirmation email will be sent to this address</small></span><br>
+			</div>
+		</div>
+
+		<div class="col-md-6 margin-bottom">
+			<div class="row-form">
+				<span class="label">Name on the card:</span>
+				<input id="nameOnCard" type="text" ng-model="user.nameOnCard">
+			</div>
+			<div class="row-form">
+				<span class="label">Card Type:</span>
+				<select id="cardType" class="ng-pristine ng-valid" ng-model="user.cardType">
+					<option value="?" selected="selected"></option>
+					<option value="0">Visa</option>
+					<option value="1">Mastercard</option>
+					<option value="2">American Express</option>
+				</select>
+				<br>
+			</div>
+			<div class="row-form">
+				<span class="label">Card Number:</span>
+				<input type="text" id="cardNumber" ng-model="user.cardNumber">
+			</div>
+			<div class="row-form">
+				<span class="label">Expiration:</span>
+				<select id="expiration" class="ng-pristine ng-valid" ng-model="user.expiration">
+					<option value="?" selected="selected"></option>
+					<option value="0">January</option>
+					<option value="1">February</option>
+					<option value="2">March</option>
+					<option value="3">April</option>
+					<option value="4">May</option>
+					<option value="5">June</option>
+					<option value="6">July</option>
+					<option value="7">August</option>
+					<option value="8">September</option>
+					<option value="9">October</option>
+					<option value="10">November</option>
+					<option value="11">December</option>
+				</select> 
+					/ 
+				<select id="year" class="ng-pristine ng-valid" ng-model="user.year">
+					<option value="?" selected="selected"></option>
+					<option value="0">2014</option>
+					<option value="1">2015</option>
+					<option value="2">2016</option>
+					<option value="3">2017</option>
+					<option value="4">2018</option>
+					<option value="5">2019</option>
+					<option value="6">2020</option>
+				</select>
+			</div>
+			<div class="row-form">
+				<span class="label">Card Security Code:</span>
+				<input id="cardSecurityCode" type="text" ng-model="user.cardSecurityCode">
+			</div>
+			<div class="row-form">
+				<span class="label">Waiver:</span>
+				<textarea rows="5" cols="50" class="waiver" disabled>You represent and warrant to NYCBA LLC its agents and employees that you have full legal authority to complete this online registration form or request, including full authority to make use of the credit or debit card to which registration fees will be charged. In addition, if you are registering third parties, you represent and warrant that you have been duly authorized to act as agent on behalf of such parties in submitting this online registration request.
+
+Acknowledging that participation in athletics carries with it a risk of physical injury, I agree that NYCBA LLC its agents and employees shall not be liable to me or my child for any injury or damage, howsoever caused, resulting directly or indirectly from my or my child's participation in NYCBA leagues at any time preceding, during or after my or my child's participation, and I hereby discharge NYCBA its agents and employees from all actions, claims, and demands I or my child may have for any such injury or damage.
+
+I authorize that NYCBA LLC and its licensees have the right to use all photographs or videos taken of me or my child while participating in NYCBA programming for advertising or promotional material.</textarea>
+			</div>
+			<div class="row-form margin-bottom">
+				<input type="checkbox" ng-model="agreed"> I agree
+			</div>
+			<div class="row-form">
+				<button type="submit" id="btnSignUp" ng-click="addPlayer()" class="btn btn-danger">Submit</button>
+			</div>
+		</div>
+		
+	</div>
+
+	<br>
+	<br>
+
+	
+</div>
+
+
+<div ng-show="confirmation">
+	<h3>Thank you for signing up! Please, check your email for confirmation</h3>
+</div>

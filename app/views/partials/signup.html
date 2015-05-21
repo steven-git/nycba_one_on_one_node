@@ -1,7 +1,7 @@
 <div ng-hide="confirmation" class="signup text-left">
 
 	<h3 class="text-center"><strong>Any questions, please contact league creator Steven at 347-479-4998 or email nycba.league@gmail.com</strong></h3>
-
+<form name="myForm" novalidate>
 	<div class="col-md-12">
 		<div class="col-md-12">
 			<span class="label"><b>Checkout:</b></span>
@@ -11,26 +11,26 @@
 			<div class="row-form">
 				<div class="col-md-6 no-padding">
 					<span class="label">First Name:</span>
-					<input id="firstName" type="text" ng-model="user.firstName">
+					<input id="firstName" type="text" ng-model="user.firstName" required>
 				</div>
 				<div class="col-md-6 no-padding-small">
 					<span class="label">Last Name:</span>
-					<input id="lastName" type="text" ng-model="user.lastName">
+					<input id="lastName" type="text" ng-model="user.lastName" required>
 				</div>
 			</div>
 			<div class="row-form">
 				<span class="label">Billing address:</span>
-				<input id="addressOne" type="text" ng-model="user.addressOne">
+				<input id="addressOne" type="text" ng-model="user.addressOne" required>
 				<input id="addressTwo" type="text" ng-model="user.addressTwo">
 			</div>
 			<div class="row-form">
 				<div class="col-md-8 no-padding">
 					<span class="label">City:</span>
-					<input id="city" type="text" ng-model="user.city">
+					<input id="city" type="text" ng-model="user.city" required>
 				</div>
 				<div class="col-md-4 no-padding-small">
 					<span class="label">State:</span>
-					<select id="state" class="ng-pristine ng-valid" ng-model="user.state">
+					<select id="state" class="ng-pristine ng-valid" ng-model="user.state" required>
 						<option value="?" selected="selected"></option>
 						<option value="0">AL</option>
 						<option value="1">AK</option>
@@ -90,16 +90,16 @@
 			<div class="row-form">
 				<div class="col-md-4 no-padding">
 					<span class="label">Zip:</span>
-					<input id="zip" type="text" ng-model="user.zip">
+					<input id="zip" type="text" ng-model="user.zip" required>
 				</div>
 				<div class="col-md-8 no-padding-small">
 					<span class="label">Phone:</span>
-					<input id="phone" type="text" ng-model="user.phone">
+					<input id="phone" type="text" ng-model="user.phone" required>
 				</div>
 			</div>
 			<div class="row-form">
 				<span class="label">Email:</span>
-				<input id="email" type="text" ng-model="user.email">
+				<input id="email" type="email" ng-model="user.email" required>
 				<span class="text-muted"><small>your confirmation email will be sent to this address</small></span><br>
 			</div>
 		</div>
@@ -107,11 +107,11 @@
 		<div class="col-md-6 margin-bottom">
 			<div class="row-form">
 				<span class="label">Name on the card:</span>
-				<input id="nameOnCard" type="text" ng-model="user.nameOnCard">
+				<input id="nameOnCard" type="text" ng-model="user.nameOnCard" required>
 			</div>
 			<div class="row-form">
 				<span class="label">Card Type:</span>
-				<select id="cardType" class="ng-pristine ng-valid" ng-model="user.cardType">
+				<select id="cardType" class="ng-pristine ng-valid" ng-model="user.cardType" required>
 					<option value="?" selected="selected"></option>
 					<option value="0">Visa</option>
 					<option value="1">Mastercard</option>
@@ -121,11 +121,11 @@
 			</div>
 			<div class="row-form">
 				<span class="label">Card Number:</span>
-				<input type="text" id="cardNumber" ng-model="user.cardNumber">
+				<input type="text" id="cardNumber" ng-model="user.cardNumber" required>
 			</div>
 			<div class="row-form">
 				<span class="label">Expiration:</span>
-				<select id="expiration" class="ng-pristine ng-valid" ng-model="user.expiration">
+				<select id="expiration" class="ng-pristine ng-valid" ng-model="user.expiration" required>
 					<option value="?" selected="selected"></option>
 					<option value="0">January</option>
 					<option value="1">February</option>
@@ -141,7 +141,7 @@
 					<option value="11">December</option>
 				</select> 
 					/ 
-				<select id="year" class="ng-pristine ng-valid" ng-model="user.year">
+				<select id="year" class="ng-pristine ng-valid" ng-model="user.year" required>
 					<option value="?" selected="selected"></option>
 					<option value="0">2014</option>
 					<option value="1">2015</option>
@@ -154,7 +154,7 @@
 			</div>
 			<div class="row-form">
 				<span class="label">Card Security Code:</span>
-				<input id="cardSecurityCode" type="text" ng-model="user.cardSecurityCode">
+				<input id="cardSecurityCode" type="text" ng-model="user.cardSecurityCode" required>
 			</div>
 			<div class="row-form">
 				<span class="label">Waiver:</span>
@@ -165,14 +165,16 @@ Acknowledging that participation in athletics carries with it a risk of physical
 I authorize that NYCBA LLC and its licensees have the right to use all photographs or videos taken of me or my child while participating in NYCBA programming for advertising or promotional material.</textarea>
 			</div>
 			<div class="row-form margin-bottom">
-				<input type="checkbox" ng-model="agreed"> I agree
+				<input type="checkbox" ng-model="agreed" required> I agree
 			</div>
 			<div class="row-form">
-				<button type="submit" id="btnSignUp" ng-click="addPlayer()" class="btn btn-danger">Submit</button>
+				<button type="submit" id="btnSignUp" ng-disabled="myForm.$invalid" ng-click="addPlayer()" class="btn btn-danger">Submit</button>
 			</div>
 		</div>
 		
 	</div>
+
+</form>
 
 	<br>
 	<br>
@@ -181,6 +183,3 @@ I authorize that NYCBA LLC and its licensees have the right to use all photograp
 </div>
 
 
-<div ng-show="confirmation">
-	<h3>Thank you for signing up! Please, check your email for confirmation</h3>
-</div>

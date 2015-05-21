@@ -2,7 +2,7 @@
 
 var app = angular.module("nycbaApp", ["ngRoute", "firebase"]);
 
-app.controller('SignUpController', function($scope, $firebaseArray){
+app.controller('SignUpController', function($scope, $firebaseArray, $location){
   $scope.user = {
     firstName: '',
     lastName: '',
@@ -28,12 +28,12 @@ var databaseData = new Firebase("https://basketballoneonone.firebaseio.com/");
 // GET PLAYER AS AN ARRAY
 $scope.player = $firebaseArray(databaseData);
 
-console.log($scope.player);
+//console.log($scope.player);
 
 
 
 $scope.addPlayer = function () {
- alert($scope.user.firstName);
+ //alert($scope.user.firstName);
   $scope.player.$add({
     First_Name: $scope.user.firstName,
     Last_Name: $scope.user.lastName,
@@ -53,6 +53,8 @@ $scope.addPlayer = function () {
 
   });
 
+  $location.url('/emailconfirmation');
+
 }
 
 
@@ -65,87 +67,92 @@ app.config(function($routeProvider, $locationProvider){
     .when('/',
     {
       templateUrl: '/views/partials/main.html',
-      controller: 'MainCtrl'
+      controller: 'SignUpController'
     })
     .when('/bracket',
     {
       templateUrl: '/views/partials/bracket.html',
-      controller: 'BracketCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/bracket1',
     {
       templateUrl: '/views/partials/bracket1.html',
-      controller: 'BracketCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/players',
     {
       templateUrl: '/views/partials/players.html',
-      controller: 'PlayerCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/champions',
     {
       templateUrl: '/views/partials/champions.html',
-      controller: 'ChampionCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/rules',
     {
       templateUrl: '/views/partials/rules.html',
-      controller: 'ChampionCtrl'     
+      controller: 'SignUpController'     
     })  
     .when('/signup',
     {
       templateUrl: '/views/partials/signup.html',
       controller: 'SignUpController'     
     })
+    .when('/emailconfirmation',
+    {
+      templateUrl: '/views/partials/email.html',
+      controller: 'SignUpController'     
+    })
     .when('/photos',
     {
       templateUrl: '/views/partials/photos.html',
-      controller: 'SignupCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/steveng',
     {
       templateUrl: '/views/partials/steveng.html',
-      controller: 'SignupCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/keving',
     {
       templateUrl: '/views/partials/keving.html',
-      controller: 'SignupCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/antonios',
     {
       templateUrl: '/views/partials/antonios.html',
-      controller: 'SignupCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/antoniog',
     {
       templateUrl: '/views/partials/antoniog.html',
-      controller: 'SignupCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/yonathanw',
     {
       templateUrl: '/views/partials/yonathanw.html',
-      controller: 'SignupCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/chrisc',
     {
       templateUrl: '/views/partials/chrisc.html',
-      controller: 'SignupCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/kevinb',
     {
       templateUrl: '/views/partials/kevinb.html',
-      controller: 'SignupCtrl'     
+      controller: 'SignUpController'     
     })
     .when('/joshf',
     {
       templateUrl: '/views/partials/joshf.html',
-      controller: 'SignupCtrl'     
+      controller: 'SignUpController'     
     })        
     .when('/player',
     {
       templateUrl: '/views/partials/placeholder.html',
-      controller: 'SignupCtrl'     
+      controller: 'SignUpController'     
     })        
 
     .otherwise({
